@@ -1,18 +1,19 @@
 Summary:	Simple application to control the JACK server
 Summary(pl):	Prosty program do kontrolowania serwera JACK-a
 Name:		qjackctl
-Version:	0.2.13
+Version:	0.2.14
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://mesh.dl.sourceforge.net/sourceforge/qjackctl/%{name}-%{version}.tar.gz
-# Source0-md5:	28adf191e67ba569cc0c7dd0127fd0c2
+# Source0-md5:	efcfbf2a5729d6e346e82bcdff5cb763
 Source1:	%{name}.desktop
 Patch0:		%{name}-build_fixes.patch
 URL:		http://qjackctl.sourceforge.net
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel >= 0.80.0
+BuildRequires:	qmake
 BuildRequires:	qt-devel >= 3.1.1
 BuildRequires:	sed >= 4.0
 Provides:	jack-patch-bay
@@ -30,7 +31,7 @@ Posiada proste GUI dla ustawiania poszczególnych parametrów JACK-a.
 %setup -q
 %patch -p1
 
-sed -i -e 's:QTDIR/lib:QTDIR/%{_lib}:g' -e 's:X11R6/lib:X11R6/%{_lib}:g' \
+%{__sed} -i -e 's:QTDIR/lib:QTDIR/%{_lib}:g' -e 's:X11R6/lib:X11R6/%{_lib}:g' \
 	configure.in
 
 %build
