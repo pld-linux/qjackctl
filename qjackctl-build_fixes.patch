@@ -1,0 +1,28 @@
+diff -aurN qjackctl-0.0.9a.orig/Makefile.in qjackctl-0.0.9a/Makefile.in
+--- qjackctl-0.0.9a.orig/Makefile.in	2003-09-04 11:15:12.000000000 +0200
++++ qjackctl-0.0.9a/Makefile.in	2003-10-04 15:51:47.592171416 +0200
+@@ -14,8 +14,8 @@
+ 	@make -f $(name).mak $(name)
+ 
+ install:	$(name) $(name).xpm
+-	@install -vD $(name) $(prefix)/bin/$(name)
+-	@install -vD $(name).xpm $(prefix)/share/icons/$(name).xpm
++	@install -vD $(name) $(DESTDIR)$(prefix)/bin/$(name)
++	@install -vD $(name).xpm $(DESTDIR)$(prefix)/share/pixmaps/$(name).xpm
+ 
+ uninstall:	$(prefix)/bin/$(name)
+ 	@rm -vf $(prefix)/bin/$(name)
+diff -aurN qjackctl-0.0.9a.orig/configure.in qjackctl-0.0.9a/configure.in
+--- qjackctl-0.0.9a.orig/configure.in	2003-09-22 23:52:11.000000000 +0200
++++ qjackctl-0.0.9a/configure.in	2003-10-04 15:32:18.077964600 +0200
+@@ -47,8 +47,8 @@
+ fi
+ AC_SUBST(ac_qtlib)
+ 
+-CFLAGS="$CFLAGS -I$QTDIR/include"
+-CPPFLAGS="$CPPFLAGS -I$QTDIR/include"
++CFLAGS="$CFLAGS -I$QTDIR/include/qt"
++CPPFLAGS="$CPPFLAGS -I$QTDIR/include/qt"
+ LIBS="-L$QTDIR/lib -L/usr/X11R6/lib"
+ 
+ AC_CACHE_CHECK([for Qt library version >= 3.1.1],
