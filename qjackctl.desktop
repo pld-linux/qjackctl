@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=QJackctl
+Name[pl]=QJackctl
+Comment=Control the JACK sound server
+Comment[pl]=Kontroluje serwer dźwięku JACKa
+Exec=/usr/bin/qjackctl
+Icon=qjackctl.xpm
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;
