@@ -5,11 +5,13 @@ Version:	0.1.1a
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
-Source0:	http://dl.sourceforge.net/sourceforge/qjackctl/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/qjackctl/%{name}-%{version}.tar.gz
 # Source0-md5:	a579439847f35c368d285702ff7539b0
 Source1:	%{name}.desktop
 Patch0:		%{name}-build_fixes.patch
 URL:		http://qjackctl.sourceforge.net
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel >= 0.80.0
 BuildRequires:	qt-devel >= 3.1.1
 Provides:	jack-patch-bay
