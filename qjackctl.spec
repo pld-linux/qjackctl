@@ -5,7 +5,7 @@ Version:	0.2.15a
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
-Source0:	http://mesh.dl.sourceforge.net/sourceforge/qjackctl/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/qjackctl/%{name}-%{version}.tar.gz
 # Source0-md5:	a78deb26aea7a168f06cfa7642d4388d
 Source1:	%{name}.desktop
 Patch0:		%{name}-build_fixes.patch
