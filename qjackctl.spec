@@ -1,5 +1,5 @@
 Summary:	Simple application to control the JACK server
-Summary(pl):	Prosty program do kontrolowania serwera JACKa
+Summary(pl):	Prosty program do kontrolowania serwera JACK-a
 Name:		qjackctl
 Version:	0.2.12
 Release:	1
@@ -22,8 +22,8 @@ Qjackctl is a Qt application to control the JACK sound server.
 Provides a simple GUI dialog for setting several JACK parameters.
 
 %description -l pl
-Qjackctl to program pozwalaj±cy kontrolowaæ serwer d¼wiêku JACKa.
-Posiada proste GUI dla ustawiania poszczególnych parametrów JACKa.
+Qjackctl to program pozwalaj±cy kontrolowaæ serwer d¼wiêku JACK-a.
+Posiada proste GUI dla ustawiania poszczególnych parametrów JACK-a.
 
 %prep
 %setup -q
