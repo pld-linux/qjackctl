@@ -14,6 +14,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel >= 0.80.0
 BuildRequires:	qt-devel >= 3.1.1
+BuildRequires:	sed >= 4.0
 Provides:	jack-patch-bay
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
