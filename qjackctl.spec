@@ -1,12 +1,12 @@
 Summary:	Simple application to control the JACK server
 Summary(pl):	Prosty program do kontrolowania serwera JACK-a
 Name:		qjackctl
-Version:	0.2.12
+Version:	0.2.12a
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
-Source0:	http://dl.sourceforge.net/qjackctl/%{name}-%{version}.tar.gz
-# Source0-md5:	309b425fb0ae159cea5341bd958c5236
+Source0:	http://mesh.dl.sourceforge.net/sourceforge/qjackctl/%{name}-%{version}.tar.gz
+# Source0-md5:	7898fe8c2ba194943cde1b79a702dac3
 Source1:	%{name}.desktop
 Patch0:		%{name}-build_fixes.patch
 URL:		http://qjackctl.sourceforge.net
