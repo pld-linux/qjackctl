@@ -12,6 +12,7 @@ Patch0:		%{name}-build_fixes.patch
 URL:		http://qjackctl.sourceforge.net
 BuildRequires:	jack-audio-connection-kit-devel >= 0.80.0
 BuildRequires:	qt-devel >= 3.1.1
+Provides:	jack-patch-bay
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
