@@ -1,5 +1,5 @@
 Summary:	Simple application to control the JACK server
-Summary(pl):	Prosty program do kotrolowania servera JACKa
+Summary(pl):	Prosty program do kontrolowania serwera JACKa
 Name:		qjackctl
 Version:	0.0.9a
 Release:	1
