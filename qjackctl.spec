@@ -10,6 +10,7 @@ Source0:	http://mesh.dl.sourceforge.net/sourceforge/qjackctl/%{name}-%{version}.
 Source1:	%{name}.desktop
 Patch0:		%{name}-build_fixes.patch
 URL:		http://qjackctl.sourceforge.net
+BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel >= 0.80.0
