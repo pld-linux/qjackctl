@@ -29,8 +29,11 @@ Posiada proste GUI dla ustawiania poszczególnych parametrów JACKa.
 %build
 %{__aclocal}
 %{__autoconf}
-QTDIR=%{_prefix} \
+
+export QTDIR=%{_prefix}
+
 %configure
+
 %{__make}
 
 %install
