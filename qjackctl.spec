@@ -1,14 +1,13 @@
 Summary:	Simple application to control the JACK server
 Summary(pl):	Prosty program do kontrolowania serwera JACK-a
 Name:		qjackctl
-Version:	0.2.15a
+Version:	0.2.16
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/qjackctl/%{name}-%{version}.tar.gz
-# Source0-md5:	a78deb26aea7a168f06cfa7642d4388d
+# Source0-md5:	fef65c3000e1515f2a71a4fa16158245
 Source1:	%{name}.desktop
-Patch0:		%{name}-build_fixes.patch
 URL:		http://qjackctl.sourceforge.net
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
@@ -30,10 +29,10 @@ Posiada proste GUI dla ustawiania poszczególnych parametrów JACK-a.
 
 %prep
 %setup -q
-%patch -p1
 
 %{__sed} -i -e 's:QTDIR/lib:QTDIR/%{_lib}:g' -e 's:X11R6/lib:X11R6/%{_lib}:g' \
 	configure.in
+%{__sed} -i 's,$(prefix)/share/icons,%{_pixmapsdir},g' Makefile.in
 
 %build
 %{__aclocal}
