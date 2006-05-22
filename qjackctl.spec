@@ -1,12 +1,12 @@
 Summary:	Simple application to control the JACK server
 Summary(pl):	Prosty program do kontrolowania serwera JACK-a
 Name:		qjackctl
-Version:	0.2.18
+Version:	0.2.20
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/qjackctl/%{name}-%{version}.tar.gz
-# Source0-md5:	7390b2a2126ac51ea6875a13dc84e456
+# Source0-md5:	04141b66ba0b06d8acc92fdd442192fe
 Source1:	%{name}.desktop
 URL:		http://qjackctl.sourceforge.net
 BuildRequires:	alsa-lib-devel
@@ -30,28 +30,23 @@ Posiada proste GUI dla ustawiania poszczególnych parametrów JACK-a.
 %prep
 %setup -q
 
-%{__sed} -i -e 's:QTDIR/lib:QTDIR/%{_lib}:g' -e 's:X11R6/lib:X11R6/%{_lib}:g' \
-	configure.in
-%{__sed} -i 's,$(prefix)/share/icons,%{_pixmapsdir},g' Makefile.in
-
 %build
 %{__aclocal}
 %{__autoconf}
 
 export QTDIR=%{_prefix}
-
 %configure
-
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_desktopdir}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -c %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install icons/%{name}.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
