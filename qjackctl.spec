@@ -9,13 +9,13 @@ Source0:	http://dl.sourceforge.net/qjackctl/%{name}-%{version}.tar.gz
 # Source0-md5:	17830d94f1f064ca190ab42ddac20c4b
 Source1:	%{name}.desktop
 URL:		http://qjackctl.sourceforge.net
+BuildRequires:	QtGui-devel
+BuildRequires:	QtXml-devel
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel >= 0.80.0
 BuildRequires:	qt4-qmake
-BuildRequires:	QtGui-devel
-BuildRequires:	QtXml-devel
 BuildRequires:	sed >= 4.0
 Provides:	jack-patch-bay
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
