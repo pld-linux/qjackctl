@@ -1,0 +1,41 @@
+--- qjackctl-0.3.2/configure.ac~	2008-01-06 20:33:35.218713393 +0100
++++ qjackctl-0.3.2/configure.ac	2008-01-06 20:36:27.880771328 +0100
+@@ -89,7 +89,7 @@
+   if test -d $X/bin; then
+     ac_path="$X/bin:$ac_path"
+   fi
+-  if test -x $X/qmake; then
++  if test -x $X/qmake-qt4; then
+     ac_path="$X:$ac_path"
+   fi
+   if test -d $X/include; then
+@@ -132,23 +132,23 @@
+ ac_errmsg="not found in current PATH. Maybe QT development environment isn't available (qt-devel)."
+ 
+ # Check for Qt qmake utility.
+-AC_PATH_PROG(ac_qmake, qmake, [no], $ac_path)
++AC_PATH_PROG(ac_qmake, qmake-qt4, [no], $ac_path)
+ if test "x$ac_qmake" = "xno"; then
+-   AC_MSG_ERROR([qmake $ac_errmsg])
++   AC_MSG_ERROR([qmake-qt4 $ac_errmsg])
+ fi
+ AC_SUBST(ac_qmake)
+ 
+ # Check for Qt moc utility.
+-AC_PATH_PROG(ac_moc, moc, [no], $ac_path)
++AC_PATH_PROG(ac_moc, moc-qt4, [no], $ac_path)
+ if test "x$ac_moc" = "xno"; then
+-   AC_MSG_ERROR([moc $ac_errmsg])
++   AC_MSG_ERROR([moc-qt4 $ac_errmsg])
+ fi
+ AC_SUBST(ac_moc)
+ 
+ # Check for Qt uic utility.
+-AC_PATH_PROG(ac_uic, uic, [no], $ac_path)
++AC_PATH_PROG(ac_uic, uic-qt4, [no], $ac_path)
+ if test "x$ac_uic" = "xno"; then
+-   AC_MSG_ERROR([uic $ac_errmsg])
++   AC_MSG_ERROR([uic-qt4 $ac_errmsg])
+ fi
+ AC_SUBST(ac_uic)
+ 
