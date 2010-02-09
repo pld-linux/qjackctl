@@ -16,6 +16,7 @@ BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel >= 0.80.0
+BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake >= 4.3.3-3
 BuildRequires:	sed >= 4.0
 Provides:	jack-patch-bay
