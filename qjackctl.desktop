@@ -1,8 +1,11 @@
 [Desktop Entry]
-Name=QJackctl
-Name[pl]=QJackctl
-Comment=Control the JACK sound server
-Comment[pl]=Kontroluje serwer dźwięku JACKa
+Name=QjackCtl
+Comment=QjackCtl is a JACK Audio Connection Kit Qt GUI Interface
+Comment[de]=Grafisches Werkzeug zur Steuerung des JACK-Audio-Systems
+Comment[fr]=QjackCtl est une interface graphique Qt pour le kit de connexion audio JACK
+Comment[it]=QjackCtl è un'interfaccia di controllo per JACK basata su Qt
+Comment[ru]=Программа для управления звуковым сервером JACK
+Comment[pl]=QjackCtl to interfejs GUI do kontrolowania serwera dźwięku JACK
 Exec=/usr/bin/qjackctl
 Icon=qjackctl
 Terminal=false
