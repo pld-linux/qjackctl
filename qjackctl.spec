@@ -11,6 +11,7 @@ Source1:	%{name}.desktop
 Patch0:		%{name}-qt4.patch
 Patch1:		%{name}-locale.patch
 URL:		http://qjackctl.sourceforge.net
+BuildRequires:	QtDBus-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	alsa-lib-devel
