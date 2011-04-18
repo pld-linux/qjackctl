@@ -1,14 +1,15 @@
 Summary:	Simple application to control the JACK server
 Summary(pl.UTF-8):	Prosty program do kontrolowania serwera JACK-a
 Name:		qjackctl
-Version:	0.3.2
-Release:	5
+Version:	0.3.7
+Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/qjackctl/%{name}-%{version}.tar.gz
-# Source0-md5:	17830d94f1f064ca190ab42ddac20c4b
+# Source0-md5:	3462613bd5c92fa6e6ae92950bd69c0b
 Source1:	%{name}.desktop
 Patch0:		%{name}-qt4.patch
+Patch1:		%{name}-locale.patch
 URL:		http://qjackctl.sourceforge.net
 BuildRequires:	QtGui-devel
 BuildRequires:	QtXml-devel
@@ -17,6 +18,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel >= 0.80.0
 BuildRequires:	qt4-build
+BuildRequires:	qt4-linguist
 BuildRequires:	qt4-qmake >= 4.3.3-3
 BuildRequires:	sed >= 4.0
 Provides:	jack-patch-bay
@@ -33,13 +35,14 @@ Posiada proste GUI dla ustawiania poszczególnych parametrów JACK-a.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
 %{__autoconf}
 
 %configure
-%{__make}
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -49,14 +52,16 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -c %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-install icons/%{name}.png $RPM_BUILD_ROOT%{_pixmapsdir}
+
+%find_lang %{name} --with-qm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*.desktop
-%{_pixmapsdir}/%{name}.png
+%{_iconsdir}/hicolor/*/apps/%{name}.png
+%{_mandir}/man1/qjackctl.1*
