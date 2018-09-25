@@ -1,14 +1,15 @@
 Summary:	Simple application to control the JACK server
 Summary(pl.UTF-8):	Prosty program do kontrolowania serwera JACK-a
 Name:		qjackctl
-Version:	0.4.1
+Version:	0.5.4
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://downloads.sourceforge.net/qjackctl/%{name}-%{version}.tar.gz
-# Source0-md5:	6a0a4245e2b9e470e04009e1d0f29f08
+# Source0-md5:	3c1f8dfeb03f3ea45f9e0e14e60e05e0
 Source1:	%{name}.desktop
 URL:		http://qjackctl.sourceforge.net
+BuildRequires:	Qt5Core-devel >= 5.1
 BuildRequires:	Qt5DBus-devel
 BuildRequires:	Qt5Gui-devel
 BuildRequires:	Qt5X11Extras-devel
@@ -44,7 +45,7 @@ Posiada proste GUI dla ustawiania poszczególnych parametrów JACK-a.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir},%{_mandir}/fr/man1}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -52,6 +53,8 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 install -c %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name} --with-qm
+
+mv $RPM_BUILD_ROOT%{_mandir}/man1/qjackctl.fr.1.gz $RPM_BUILD_ROOT%{_mandir}/fr/man1/qjackctl.1.gz1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,6 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_mandir}/man1/qjackctl.1*
-%{_datadir}/appdata/%{name}.appdata.xml
+%lang(fr) %{_mandir}/fr/man1/qjackctl.1*
+%{_datadir}/metainfo/%{name}.appdata.xml
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/translations
