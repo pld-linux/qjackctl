@@ -20,7 +20,7 @@ BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel >= 0.118.3
 BuildRequires:	qt5-build
 BuildRequires:	qt5-linguist
-BuildRequires:	qt5-qmake >= 4.3.3-3
+BuildRequires:	qt5-qmake >= 5.1
 BuildRequires:	sed >= 4.0
 Provides:	jack-patch-bay
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,7 +40,9 @@ Posiada proste GUI dla ustawiania poszczególnych parametrów JACK-a.
 %{__aclocal}
 %{__autoconf}
 
-%configure
+%configure \
+	--with-qt5=%{_libdir}/qt5
+
 %{__make} -j1
 
 %install
